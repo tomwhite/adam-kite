@@ -1,0 +1,7 @@
+{
+  "type" : "enum",
+  "name" : "Base",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "doc" : "Enumeration for DNA/RNA bases. For codes outside of ACTGU, see the IUPAC \n resolution codes (http://www.bioinformatics.org/sms/iupac.html).",
+  "symbols" : [ "A", "C", "T", "G", "U", "N", "X", "K", "M", "R", "Y", "S", "W", "B", "V", "H", "D" ]
+}

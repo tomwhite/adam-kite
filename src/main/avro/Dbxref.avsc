@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "Dbxref",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "fields" : [ {
+    "name" : "accession",
+    "type" : "string"
+  }, {
+    "name" : "db",
+    "type" : "string"
+  } ]
+}

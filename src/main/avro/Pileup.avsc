@@ -1,0 +1,94 @@
+{
+  "type" : "record",
+  "name" : "Pileup",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "fields" : [ {
+    "name" : "contig",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "Contig",
+      "doc" : "Record for describing a reference assembly. Not used for storing the contents\n of said assembly.\n\n @see NucleotideContigFragment",
+      "fields" : [ {
+        "name" : "contigName",
+        "type" : [ "null", "string" ],
+        "doc" : "The name of this contig in the assembly (e.g., \"chr1\").",
+        "default" : null
+      }, {
+        "name" : "contigLength",
+        "type" : [ "null", "long" ],
+        "doc" : "The length of this contig.",
+        "default" : null
+      }, {
+        "name" : "contigMD5",
+        "type" : [ "null", "string" ],
+        "doc" : "The MD5 checksum of the assembly for this contig.",
+        "default" : null
+      }, {
+        "name" : "referenceURL",
+        "type" : [ "null", "string" ],
+        "doc" : "The URL at which this reference assembly can be found.",
+        "default" : null
+      }, {
+        "name" : "assembly",
+        "type" : [ "null", "string" ],
+        "doc" : "The name of this assembly (e.g., \"hg19\").",
+        "default" : null
+      }, {
+        "name" : "species",
+        "type" : [ "null", "string" ],
+        "doc" : "The species that this assembly is for.",
+        "default" : null
+      } ]
+    } ],
+    "doc" : "The reference contig that this pileup is mapped to.",
+    "default" : null
+  }, {
+    "name" : "position",
+    "type" : [ "null", "long" ],
+    "doc" : "The 0-based mapping position of this pileup on the reference contig.",
+    "default" : null
+  }, {
+    "name" : "rangeOffset",
+    "type" : [ "null", "int" ],
+    "doc" : "The range offset and range length fields are used when an insertion or\n   deletion has occured. The range length indicates the length of the event\n   and the range offset field indicates the location of this base in the\n   insertion or deletion event.",
+    "default" : null
+  }, {
+    "name" : "rangeLength",
+    "type" : [ "null", "int" ],
+    "default" : null
+  }, {
+    "name" : "referenceBase",
+    "type" : [ "null", {
+      "type" : "enum",
+      "name" : "Base",
+      "doc" : "Enumeration for DNA/RNA bases. For codes outside of ACTGU, see the IUPAC \n resolution codes (http://www.bioinformatics.org/sms/iupac.html).",
+      "symbols" : [ "A", "C", "T", "G", "U", "N", "X", "K", "M", "R", "Y", "S", "W", "B", "V", "H", "D" ]
+    } ],
+    "doc" : "The base in the reference at this position.",
+    "default" : null
+  }, {
+    "name" : "readBase",
+    "type" : [ "null", "Base" ],
+    "doc" : "The read base at this position.",
+    "default" : null
+  }, {
+    "name" : "sampleId",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "sangerQuality",
+    "type" : [ "null", "int" ],
+    "doc" : "The Phred scaled base quality at this position.",
+    "default" : null
+  }, {
+    "name" : "mapQuality",
+    "type" : [ "null", "int" ],
+    "doc" : "The Phred scaled mapping quality of the read this pileup came from.",
+    "default" : null
+  }, {
+    "name" : "isReverseStrand",
+    "type" : [ "boolean", "null" ],
+    "doc" : "True if this base is on the reverse strand.",
+    "default" : false
+  } ]
+}

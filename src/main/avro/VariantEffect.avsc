@@ -1,0 +1,26 @@
+{
+  "type" : "record",
+  "name" : "VariantEffect",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "fields" : [ {
+    "name" : "hgvs",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "referenceAminoAcid",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "alternateAminoAcid",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "geneId",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "transcriptId",
+    "type" : [ "null", "string" ],
+    "default" : null
+  } ]
+}

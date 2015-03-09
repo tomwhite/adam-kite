@@ -1,0 +1,51 @@
+{
+  "type" : "record",
+  "name" : "FlatGenotype",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "fields" : [ {
+    "name" : "referenceName",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "position",
+    "type" : [ "null", "long" ],
+    "default" : null
+  }, {
+    "name" : "referenceAllele",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "alleles",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "default" : [ ]
+  }, {
+    "name" : "genotypeLikelihoods",
+    "type" : {
+      "type" : "array",
+      "items" : "int"
+    },
+    "default" : [ ]
+  }, {
+    "name" : "alleleDepths",
+    "type" : {
+      "type" : "array",
+      "items" : "int"
+    },
+    "default" : [ ]
+  }, {
+    "name" : "readDepth",
+    "type" : [ "null", "int" ],
+    "default" : null
+  }, {
+    "name" : "genotypeQuality",
+    "type" : [ "null", "int" ],
+    "default" : null
+  }, {
+    "name" : "sampleId",
+    "type" : [ "null", "string" ],
+    "default" : null
+  } ]
+}

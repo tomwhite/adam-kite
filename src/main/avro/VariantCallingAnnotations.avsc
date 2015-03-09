@@ -1,0 +1,85 @@
+{
+  "type" : "record",
+  "name" : "VariantCallingAnnotations",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "fields" : [ {
+    "name" : "variantCallErrorProbability",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "variantIsPassing",
+    "type" : [ "null", "boolean" ],
+    "default" : null
+  }, {
+    "name" : "variantFilters",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "default" : [ ]
+  }, {
+    "name" : "readDepth",
+    "type" : [ "null", "int" ],
+    "default" : null
+  }, {
+    "name" : "downsampled",
+    "type" : [ "null", "boolean" ],
+    "default" : null
+  }, {
+    "name" : "baseQRankSum",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "clippingRankSum",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "fisherStrandBiasPValue",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "haplotypeScore",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "inbreedingCoefficient",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "rmsMapQ",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "mapq0Reads",
+    "type" : [ "null", "int" ],
+    "default" : null
+  }, {
+    "name" : "mqRankSum",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "variantQualityByDepth",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "readPositionRankSum",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "vqslod",
+    "type" : [ "null", "float" ],
+    "default" : null
+  }, {
+    "name" : "culprit",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "usedForNegativeTrainingSet",
+    "type" : [ "null", "boolean" ],
+    "default" : null
+  }, {
+    "name" : "usedForPositiveTrainingSet",
+    "type" : [ "null", "boolean" ],
+    "default" : null
+  } ]
+}

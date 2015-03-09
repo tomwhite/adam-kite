@@ -1,0 +1,7 @@
+{
+  "type" : "enum",
+  "name" : "GenotypeType",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "doc" : "An enumeration that describes the characteristics of a genotype at a site. Can\n take the following values:\n\n * HOM_REF: All genotypes at this site were called as the reference allele.\n * HET: Genotypes at this site were called as multiple different alleles. This\n   most commonly occurs if a diploid sample's genotype contains one reference\n   and one variant allele, but can also occur if the genotype contains multiple\n   alternate alleles.\n * HOM_ALT: All genotypes at this site were called as a single alternate allele.\n * NO_CALL: The genotype could not be called at this site.",
+  "symbols" : [ "HOM_REF", "HET", "HOM_ALT", "NO_CALL" ]
+}

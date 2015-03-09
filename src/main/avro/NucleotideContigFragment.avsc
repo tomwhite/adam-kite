@@ -1,0 +1,72 @@
+{
+  "type" : "record",
+  "name" : "NucleotideContigFragment",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "doc" : "Stores a contig of nucleotides; this may be a reference chromosome, may be an\n assembly, may be a BAC. Very long contigs (>1Mbp) need to be split into fragments.\n It seems that they are too long to load in a single go. For best performance,\n it seems like 10kbp is a good point at which to start splitting contigs into\n fragments.",
+  "fields" : [ {
+    "name" : "contig",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "Contig",
+      "doc" : "Record for describing a reference assembly. Not used for storing the contents\n of said assembly.\n\n @see NucleotideContigFragment",
+      "fields" : [ {
+        "name" : "contigName",
+        "type" : [ "null", "string" ],
+        "doc" : "The name of this contig in the assembly (e.g., \"chr1\").",
+        "default" : null
+      }, {
+        "name" : "contigLength",
+        "type" : [ "null", "long" ],
+        "doc" : "The length of this contig.",
+        "default" : null
+      }, {
+        "name" : "contigMD5",
+        "type" : [ "null", "string" ],
+        "doc" : "The MD5 checksum of the assembly for this contig.",
+        "default" : null
+      }, {
+        "name" : "referenceURL",
+        "type" : [ "null", "string" ],
+        "doc" : "The URL at which this reference assembly can be found.",
+        "default" : null
+      }, {
+        "name" : "assembly",
+        "type" : [ "null", "string" ],
+        "doc" : "The name of this assembly (e.g., \"hg19\").",
+        "default" : null
+      }, {
+        "name" : "species",
+        "type" : [ "null", "string" ],
+        "doc" : "The species that this assembly is for.",
+        "default" : null
+      } ]
+    } ],
+    "doc" : "The contig identification descriptor for this contig.",
+    "default" : null
+  }, {
+    "name" : "description",
+    "type" : [ "null", "string" ],
+    "doc" : "A description for this contig. When importing from FASTA, the FASTA header\n   description line should be stored here.",
+    "default" : null
+  }, {
+    "name" : "fragmentSequence",
+    "type" : [ "null", "string" ],
+    "doc" : "The sequence of bases in this fragment.",
+    "default" : null
+  }, {
+    "name" : "fragmentNumber",
+    "type" : [ "null", "int" ],
+    "doc" : "In a fragmented contig, the position of this fragment in the set of fragments.\n   Can be null if the contig is not fragmented.",
+    "default" : null
+  }, {
+    "name" : "fragmentStartPosition",
+    "type" : [ "null", "long" ],
+    "doc" : "The position of the first base of this fragment in the overall contig. E.g.,\n   if all fragments are 10kbp and this is the third fragment in the contig,\n   the start position would be 20000L.",
+    "default" : null
+  }, {
+    "name" : "numberOfFragmentsInContig",
+    "type" : [ "null", "int" ],
+    "doc" : "The total count of fragments that this contig has been broken into. Can be\n   null if the contig is not fragmented.",
+    "default" : null
+  } ]
+}

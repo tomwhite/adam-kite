@@ -1,0 +1,7 @@
+{
+  "type" : "enum",
+  "name" : "StructuralVariantType",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "doc" : "Descriptors for the type of a structural variant. The most specific descriptor\n should be used, if possible. E.g., duplication should be used instead of\n insertion if the inserted sequence is not novel. Tandem duplication should\n be used instead of duplication if the duplication is known to follow the\n duplicated sequence.",
+  "symbols" : [ "DELETION", "INSERTION", "INVERSION", "MOBILE_INSERTION", "MOBILE_DELETION", "DUPLICATION", "TANDEM_DUPLICATION" ]
+}

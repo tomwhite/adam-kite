@@ -1,0 +1,119 @@
+{
+  "type" : "record",
+  "name" : "Feature",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "fields" : [ {
+    "name" : "featureId",
+    "type" : [ "null", "string" ],
+    "doc" : "Preferably unique ID for this Feature object",
+    "default" : null
+  }, {
+    "name" : "featureType",
+    "type" : [ "null", "string" ],
+    "doc" : "The type of feature this is (aka, \"track\").\n   \n   Examples are \"conservation\", \"centipede\", \"gene\"",
+    "default" : null
+  }, {
+    "name" : "source",
+    "type" : [ "null", "string" ],
+    "doc" : "The original source for this feature.\n   \n   Path/filename/URL and/or the file type (e.g., BED, GFF, etc.)",
+    "default" : null
+  }, {
+    "name" : "contig",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "Contig",
+      "doc" : "Record for describing a reference assembly. Not used for storing the contents\n of said assembly.\n\n @see NucleotideContigFragment",
+      "fields" : [ {
+        "name" : "contigName",
+        "type" : [ "null", "string" ],
+        "doc" : "The name of this contig in the assembly (e.g., \"chr1\").",
+        "default" : null
+      }, {
+        "name" : "contigLength",
+        "type" : [ "null", "long" ],
+        "doc" : "The length of this contig.",
+        "default" : null
+      }, {
+        "name" : "contigMD5",
+        "type" : [ "null", "string" ],
+        "doc" : "The MD5 checksum of the assembly for this contig.",
+        "default" : null
+      }, {
+        "name" : "referenceURL",
+        "type" : [ "null", "string" ],
+        "doc" : "The URL at which this reference assembly can be found.",
+        "default" : null
+      }, {
+        "name" : "assembly",
+        "type" : [ "null", "string" ],
+        "doc" : "The name of this assembly (e.g., \"hg19\").",
+        "default" : null
+      }, {
+        "name" : "species",
+        "type" : [ "null", "string" ],
+        "doc" : "The species that this assembly is for.",
+        "default" : null
+      } ]
+    } ],
+    "doc" : "The contig this feature is located on",
+    "default" : null
+  }, {
+    "name" : "start",
+    "type" : [ "null", "long" ],
+    "doc" : "Start coordinate on the contig",
+    "default" : null
+  }, {
+    "name" : "end",
+    "type" : [ "null", "long" ],
+    "doc" : "End coordinate on the contig",
+    "default" : null
+  }, {
+    "name" : "strand",
+    "type" : [ "null", {
+      "type" : "enum",
+      "name" : "Strand",
+      "symbols" : [ "Forward", "Reverse", "Independent" ]
+    } ],
+    "doc" : "Strand information for this feature",
+    "default" : null
+  }, {
+    "name" : "value",
+    "type" : [ "null", "double" ],
+    "doc" : "The value associated with this feature (if double)",
+    "default" : null
+  }, {
+    "name" : "dbxrefs",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "Dbxref",
+        "fields" : [ {
+          "name" : "accession",
+          "type" : "string"
+        }, {
+          "name" : "db",
+          "type" : "string"
+        } ]
+      }
+    },
+    "doc" : "Cross-references into other databases.",
+    "default" : [ ]
+  }, {
+    "name" : "parentIds",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "List of parent featureIds, for implementing feature hierachies/graphs.",
+    "default" : [ ]
+  }, {
+    "name" : "attributes",
+    "type" : {
+      "type" : "map",
+      "values" : "string"
+    },
+    "doc" : "Additional feature info that doesn't fit into the standard fields above.\n   \n   They are all encoded as (string, string) key-value pairs.",
+    "default" : { }
+  } ]
+}

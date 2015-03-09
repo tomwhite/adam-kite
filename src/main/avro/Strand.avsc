@@ -1,0 +1,6 @@
+{
+  "type" : "enum",
+  "name" : "Strand",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "symbols" : [ "Forward", "Reverse", "Independent" ]
+}

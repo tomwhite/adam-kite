@@ -1,0 +1,37 @@
+{
+  "type" : "record",
+  "name" : "Contig",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "doc" : "Record for describing a reference assembly. Not used for storing the contents\n of said assembly.\n\n @see NucleotideContigFragment",
+  "fields" : [ {
+    "name" : "contigName",
+    "type" : [ "null", "string" ],
+    "doc" : "The name of this contig in the assembly (e.g., \"chr1\").",
+    "default" : null
+  }, {
+    "name" : "contigLength",
+    "type" : [ "null", "long" ],
+    "doc" : "The length of this contig.",
+    "default" : null
+  }, {
+    "name" : "contigMD5",
+    "type" : [ "null", "string" ],
+    "doc" : "The MD5 checksum of the assembly for this contig.",
+    "default" : null
+  }, {
+    "name" : "referenceURL",
+    "type" : [ "null", "string" ],
+    "doc" : "The URL at which this reference assembly can be found.",
+    "default" : null
+  }, {
+    "name" : "assembly",
+    "type" : [ "null", "string" ],
+    "doc" : "The name of this assembly (e.g., \"hg19\").",
+    "default" : null
+  }, {
+    "name" : "species",
+    "type" : [ "null", "string" ],
+    "doc" : "The species that this assembly is for.",
+    "default" : null
+  } ]
+}

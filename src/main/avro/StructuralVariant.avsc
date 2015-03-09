@@ -1,0 +1,36 @@
+{
+  "type" : "record",
+  "name" : "StructuralVariant",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "fields" : [ {
+    "name" : "type",
+    "type" : [ "null", {
+      "type" : "enum",
+      "name" : "StructuralVariantType",
+      "doc" : "Descriptors for the type of a structural variant. The most specific descriptor\n should be used, if possible. E.g., duplication should be used instead of\n insertion if the inserted sequence is not novel. Tandem duplication should\n be used instead of duplication if the duplication is known to follow the\n duplicated sequence.",
+      "symbols" : [ "DELETION", "INSERTION", "INVERSION", "MOBILE_INSERTION", "MOBILE_DELETION", "DUPLICATION", "TANDEM_DUPLICATION" ]
+    } ],
+    "doc" : "The type of this structural variant.",
+    "default" : null
+  }, {
+    "name" : "assembly",
+    "type" : [ "null", "string" ],
+    "doc" : "The URL of the FASTA/NucleotideContig assembly for this structural variant,\n   if one is available.",
+    "default" : null
+  }, {
+    "name" : "precise",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether this structural variant call has precise breakpoints or not. Default\n   value is true. If the call is imprecise, confidence intervals should be provided.",
+    "default" : true
+  }, {
+    "name" : "startWindow",
+    "type" : [ "null", "int" ],
+    "doc" : "The size of the confidence window around the start of the structural variant.",
+    "default" : null
+  }, {
+    "name" : "endWindow",
+    "type" : [ "null", "int" ],
+    "doc" : "The size of the confidence window around the end of the structural variant.",
+    "default" : null
+  } ]
+}

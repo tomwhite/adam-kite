@@ -1,0 +1,7 @@
+{
+  "type" : "enum",
+  "name" : "GenotypeAllele",
+  "namespace" : "org.bdgenomics.formats.avro",
+  "doc" : "An enumeration that describes the allele that corresponds to a genotype. Can take\n the following values:\n\n * Ref: The genotype is the reference allele\n * Alt: The genotype is the alternate allele\n * OtherAlt: The genotype is an unspecified other alternate allele. This occurs\n   in our schema when we have split a multi-allelic genotype into two genotype\n   records.\n * NoCall: The genotype could not be called.",
+  "symbols" : [ "Ref", "Alt", "OtherAlt", "NoCall" ]
+}
