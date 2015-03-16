@@ -91,3 +91,13 @@ mvn exec:java -Dexec.mainClass="com.cloudera.datascience.adamkite.ReadKeyedGenot
 mvn exec:java -Dexec.mainClass="com.cloudera.datascience.adamkite.ReadKeyedGenotypeDataset" \
   -Dexec.args="dataset:hbase:quickstart.cloudera/genotype.KeyedGenotype 1 15000 65000"
 ```
+
+# New impl
+
+create 'genotypes', 'g'
+
+mvn exec:java -Dexec.mainClass="com.cloudera.datascience.adamkite.variantstore.HBaseImporter" \
+  -Dexec.args="dataset:file:data/genotypes"
+
+mvn exec:java -Dexec.mainClass="com.cloudera.datascience.adamkite.variantstore.LookupPosition" \
+  -Dexec.args="1 14396"
